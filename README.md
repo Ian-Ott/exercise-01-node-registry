@@ -1,10 +1,10 @@
 # Exercise 01 — Node Registry (FastAPI + PostgreSQL + Docker Compose)
 
-> **Sistemas Distribuidos y Programación Paralela — UNLu 2026**
+> **Distributed Systems & Parallel Programming — UNLu 2026**
 >
-> Este ejercicio forma parte de la evaluación continua de la materia. A lo largo de la cursada vas a ir resolviendo ejercicios prácticos que se corrigen automáticamente. Cada ejercicio construye sobre el anterior y refuerza conceptos que vas a necesitar para los TPs: APIs REST, Docker, Compose, Kubernetes, mensajería, etc.
+> This exercise is part of the continuous assessment for the course. Throughout the semester you will solve hands-on exercises that are graded automatically. Each exercise builds on the previous one and reinforces concepts you will need for the major assignments: REST APIs, Docker, Compose, Kubernetes, messaging, etc.
 >
-> El objetivo no es solo que "pase los tests" sino que entiendas lo que estás construyendo. Los tests validan el resultado, pero la comprensión la construís vos.
+> The goal is not just to "pass the tests" but to understand what you are building. Tests validate the output — comprehension is on you.
 
 ---
 
