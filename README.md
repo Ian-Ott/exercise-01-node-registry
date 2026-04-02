@@ -1,5 +1,21 @@
 # Exercise 01 — Node Registry (FastAPI + PostgreSQL + Docker Compose)
 
+## Grading
+
+This exercise has **automated testing**. When you push to your fork, a grader will run hidden tests and post a ✅/❌ comment on your latest commit within 10 minutes.
+
+Hidden tests verify:
+- All 6 endpoints with edge cases
+- PostgreSQL integration (real DB, not mocked)
+- Dockerfile best practices (non-root, slim image, EXPOSE, no secrets)
+- docker-compose.yml configuration (2 services, depends_on, port mapping)
+- Data persists between requests
+- Soft delete behavior
+
+You have a maximum of **5 submissions**. Make them count.
+
+---
+
 ## Context
 
 In a distributed system, nodes need a way to discover each other. A **Node Registry** is a central service where nodes register themselves and query for peers — like the Node D from TP1, but built as a production-ready microservice.
@@ -174,14 +190,3 @@ curl http://localhost:8080/api/nodes
 docker compose down -v
 ```
 
----
-
-## Grading
-
-Local tests (`tests/`) are basic sanity checks. Hidden tests also verify:
-- All 6 endpoints with edge cases
-- PostgreSQL integration (real DB, not mocked)
-- Dockerfile best practices
-- docker-compose.yml configuration
-- Data persists between requests
-- Soft delete behavior
