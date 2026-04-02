@@ -6,9 +6,29 @@
 >
 > The goal is not just to "pass the tests" but to understand what you are building. Tests validate the output — comprehension is on you.
 
+## Course topics covered
+
+This exercise covers the following topics from the course syllabus:
+
+| Unit | Topic | How it applies here |
+|------|-------|-------------------|
+| **U1.6** | Client-Server communication, HTTP, JSON | You build a REST API that nodes use to register and discover peers |
+| **U1.8** | Remote Procedure Call (RPC) | REST endpoints as the modern equivalent of RPC — a client invokes a remote operation and gets a structured response |
+| **U4.3** | Docker: images, Dockerfile, Docker Hub | You containerize the API following production best practices |
+| **U4.3** | Docker Compose: multi-container applications | You orchestrate the API + PostgreSQL as a multi-service stack |
+| **U5.1** | DevOps and CI/CD | Automated grading simulates a CI pipeline — your code must pass tests on every push |
+
+### What you will practice
+
+- Designing a **REST API** with proper HTTP methods, status codes, and JSON schemas
+- Using **SQLAlchemy** with PostgreSQL for persistent storage in a distributed service
+- Writing a **production-ready Dockerfile** (non-root, slim image, layer caching)
+- Composing **multi-container applications** with Docker Compose
+- Understanding **service discovery** — this Node Registry is the foundation pattern behind tools like Consul, etcd, and Eureka
+
 ---
 
-## Evaluación automática
+## Automated grading
 
 This exercise has **automated testing**. When you push to your fork, a grader will run hidden tests and post a ✅/❌ comment on your latest commit within 10 minutes.
 
