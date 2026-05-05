@@ -6,4 +6,31 @@ Create SQLAlchemy engine and session.
 Provide a dependency for FastAPI to get a DB session.
 """
 
-# TODO: Implement database connection here
+import os
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, declarative_base
+
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+engine = create_engine(
+    DATABASE_URL,
+    pool_pre_ping=True
+)
+
+SesionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
+
+Base = declarative_base()
+
+
+def get_db():
+    db = SesionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+

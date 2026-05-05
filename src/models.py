@@ -12,3 +12,17 @@ Table: nodes
 """
 
 # TODO: Implement your SQLAlchemy model here
+from sqlalchemy import Column, Integer, String, DateTime, func
+from .database import Base
+
+class Node(Base):
+    __tablename__ = "nodes"
+
+    id = Column(Integer, primary_key=True,autoincrement=True,index=True)
+    name = Column(String,unique=True,nullable=False)
+    host = Column(String,nullable=False)
+    port = Column(Integer,nullable=False)
+    status = Column(String,server_default="active")
+    created_at = Column(DateTime, server_default=func.now())
+    created_at = Column(DateTime, server_default=func.now())
+
