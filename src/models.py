@@ -22,7 +22,7 @@ class Node(Base):
     name = Column(String,unique=True,nullable=False)
     host = Column(String,nullable=False)
     port = Column(Integer,nullable=False)
-    status = Column(String,server_default="active")
+    status = Column(String,default="active",nullable=False)
     created_at = Column(DateTime, server_default=func.now())
-    created_at = Column(DateTime, server_default=func.now())
+    updated_at = Column(DateTime, server_default=func.now())
 

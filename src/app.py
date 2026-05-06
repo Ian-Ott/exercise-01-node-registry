@@ -30,7 +30,6 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-app = FastAPI()
 @app.get("/health")
 def estado(db: Session = Depends(get_db)):
     activos = db.query(func.count(Node.id)).filter(Node.status == "active").scalar()
@@ -85,7 +84,7 @@ def actualizar_nodo(name: str, data: NodeUpdate, db: Session = Depends(get_db)):
     return nodo
 
 @app.delete("/api/nodes/{name}", status_code=status.HTTP_204_NO_CONTENT)
-def desactivar_nodo(name: str, data: NodeUpdate, db: Session = Depends(get_db)):
+def desactivar_nodo(name: str, db: Session = Depends(get_db)):
     nodo = db.query(Node).filter(Node.name == name).first()
     if not nodo:
         raise HTTPException(status_code=404,detail="Node not found")

@@ -29,7 +29,6 @@ class NodeResponse(BaseModel):
     status: str
     created_at: datetime
     updated_at: datetime
-
-class Config:
-    from_attributes = True #permite que pydantic convierta objetos SQLAlchemy a JSON
+    class Config:
+        from_attributes = True #permite que pydantic convierta objetos SQLAlchemy a JSON
  
