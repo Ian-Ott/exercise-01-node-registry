@@ -12,6 +12,7 @@ DELETE /api/nodes/{name} → soft-delete a node (set status=inactive)
 
 See README.md for full specification.
 """
+# TODO: Implement your FastAPI app here
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Depends, HTTPException, status, Response
 from .database import get_db
